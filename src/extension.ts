@@ -40,12 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
 	async function setLuauModeSingle(uri: vscode.Uri, mode: string) {
-
 		if (await isDirectory(uri)){
-            const files2 = await vscode.workspace.findFiles(
-                new vscode.RelativePattern(uri, "*")
-            );
-			console.log(files2);
 			const files = await vscode.workspace.findFiles(
                 new vscode.RelativePattern(uri, PATTERN_BOTH)
             );

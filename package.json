@@ -1,6 +1,6 @@
 {
   "name": "luau-mode-setter",
-  "displayName": "luau-mode-setter",
+  "displayName": "Luau Mode Setter",
   "description": "Quickly set strict mode for luau script",
   "publisher": "sonnguyen9800",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/sonnguyen9800/Luau-Mode-Setter.git"
   },
   "keywords": ["roblox", "luau", "vscode", "extension", "gamedev"],
-  "version": "0.0.2 ",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.95.0"
   },
