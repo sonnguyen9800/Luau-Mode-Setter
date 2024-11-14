@@ -38,7 +38,7 @@
     "menus": {
       "explorer/context": [
         {
-          "when": "resourceLangId == luau",
+          "when": "resourceLangId == luau || explorerResourceIsFolder",
           "group": "navigation",
           "title": "Toggle Strict Mode",
           "submenu": "submenuId"

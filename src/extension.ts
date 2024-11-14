@@ -19,32 +19,31 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Helper function to set the mode for each selected file
 	async function setLuauMode(uris: vscode.Uri[], mode: string) {
-		console.log('Setting mode for ' + uris.length + ' files.');
 		for (const uri of uris) {
-			vscode.window.showInformationMessage('Hello World!' + uri.toString());
-
-			const document = await vscode.workspace.openTextDocument(uri);
-			const text = document.getText();
-
-			// Check if the file already has a mode directive
-			let newText;
-			if (text.startsWith('--!')) {
-				newText = text.replace(/^--!\w+/, mode);
-			} else {
-				newText = mode + '\n' + text;
-			}
-
-			// Apply the changes
-			const edit = new vscode.WorkspaceEdit();
-			edit.replace(document.uri, new vscode.Range(0, 0, document.lineCount, 0), newText);
-			await vscode.workspace.applyEdit(edit);
-			await document.save();
+			setLuauModeSingle(uri, mode);
 		}
 	}
-	async function setLuauModeSingle(uri: vscode.Uri, mode: string) {
-		vscode.window.showInformationMessage('Hello World!' + uri.toString());
+    async function isDirectory(uri: vscode.Uri): Promise<boolean> {
+        try {
+            const stat = await vscode.workspace.fs.stat(uri);
+            return stat.type === vscode.FileType.Directory;
+        } catch (error) {
+            console.error("Error checking if URI is a folder:", error);
+            return false;
+        }
+    }
 
+	async function setLuauModeSingle(uri: vscode.Uri, mode: string) {
+
+		if (await isDirectory(uri)){
+            const files = await vscode.workspace.findFiles(
+                new vscode.RelativePattern(uri, '**/*.luau')
+            );
+            setLuauMode(files, mode);
+			return;
+		}
 		const document = await vscode.workspace.openTextDocument(uri);
+
 		const text = document.getText();
 
 		// Check if the file already has a mode directive
@@ -62,12 +61,6 @@ export function activate(context: vscode.ExtensionContext) {
 		await document.save();
 
 	}
-	function printCommand(contextSelection: vscode.Uri, allSelections: vscode.Uri[])  {
-		vscode.window.showInformationMessage('Hello World! 3');
-		console.log(contextSelection)
-		console.log(allSelections)
-	
-	}
 
 	// Function to activate commands and register them in context
 	function activateCommands() {
@@ -84,13 +77,11 @@ export function activate(context: vscode.ExtensionContext) {
 		});
 
 		const setModeNonstrict = vscode.commands.registerCommand('extension.setModeNonstrict', (contextSelection: vscode.Uri, allSelections: vscode.Uri[]) => {
-			vscode.window.showInformationMessage('Hello World! 2');
 			if (allSelections.length > 1){
 				setLuauMode(allSelections, '--!nonstrict');
 			}
 			else{
 				setLuauModeSingle(contextSelection, '--!nonstrict');
-
 			}
 		});
 
