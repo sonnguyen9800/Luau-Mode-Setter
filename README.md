@@ -1,11 +1,6 @@
 # luau-mode-setter
 
-The Luau Mode Setter extension for Visual Studio Code allows you to easily toggle different mode directives in .luau files used in Roblox development. With this extension, you can manage strictness settings within your scripts by adding or modifying mode directives such as:
-
---!strict
---!nonstrict
---!nocheck
-These directives control specific settings that affect script behavior, ensuring that your Lua code adheres to desired standards.
+The Luau Mode Setter extension for Visual Studio Code allows you to easily toggle different mode directives in .luau files used in Roblox development. With this extension, you can quickly set strict mode for your .luau script:
 
 ## Features
 
