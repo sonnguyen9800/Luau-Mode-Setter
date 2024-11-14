@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/sonnguyen9800/Luau-Mode-Setter.git"
   },
-  "keywords": ["<Keyword 1>", "<Keyword 2>"],
+  "keywords": ["roblox", "luau", "vscode", "extension", "gamedev"],
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.95.0"
