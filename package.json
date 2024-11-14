@@ -8,7 +8,7 @@
     "url": "https://github.com/sonnguyen9800/Luau-Mode-Setter.git"
   },
   "keywords": ["roblox", "luau", "vscode", "extension", "gamedev"],
-  "version": "0.0.2",
+  "version": "0.0.2 ",
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -48,16 +48,9 @@
       }
     ],
     "menus": {
-      "commandPalette": [
-        {
-          "command": "extension.activateModeManually",
-          "group": "navigation",
-          "when": "editorLangId == 'luau'"
-        }
-      ],
       "explorer/context": [
         {
-          "when": "luauModeSetterActivated && (resourceLangId == luau || explorerResourceIsFolder)",
+          "when": "luauModeSetterActivated && (resourceLangId == lua || resourceLangId == luau || explorerResourceIsFolder)",
           "group": "navigation",
           "title": "Luau Mode Setter",
           "submenu": "submenuId"
