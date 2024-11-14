@@ -32,7 +32,7 @@
     "submenus": [
       {
         "id": "submenuId",
-        "label": "Toggle Strict Mode"
+        "label": "Luau Mode Setter"
       }
     ],
     "menus": {
@@ -40,7 +40,7 @@
         {
           "when": "resourceLangId == luau || explorerResourceIsFolder",
           "group": "navigation",
-          "title": "Toggle Strict Mode",
+          "title": "Luau Mode Setter",
           "submenu": "submenuId"
         }
       ],

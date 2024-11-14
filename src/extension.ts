@@ -1,8 +1,10 @@
 import * as vscode from 'vscode';
 
+var PACKAGE_NAME  =  "Luau Mode Setter";
+
 export function activate(context: vscode.ExtensionContext) {
 	// Function to activate/deactivate based on the presence of .luau files
-	vscode.window.showInformationMessage('Hello World!');
+	vscode.window.showInformationMessage(PACKAGE_NAME + " Started!");
 
 	activateCommands();
 
@@ -118,6 +120,6 @@ export function deactivate(context?: vscode.ExtensionContext) {
 		context.subscriptions.forEach(subscription => subscription.dispose());
 		context.subscriptions.length = 0;  // Clear all subscriptions
 	}
-	vscode.window.showInformationMessage('Bye Bye');
+	vscode.window.showInformationMessage(PACKAGE_NAME + " Deactivated");
 
 }
