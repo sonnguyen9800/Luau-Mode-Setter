@@ -32,7 +32,7 @@
     "submenus": [
       {
         "id": "submenuId",
-        "label": "Test Submenus"
+        "label": "Toggle Strict Mode"
       }
     ],
     "menus": {

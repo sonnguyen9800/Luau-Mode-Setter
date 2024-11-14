@@ -65,7 +65,6 @@ export function activate(context: vscode.ExtensionContext) {
 	// Function to activate commands and register them in context
 	function activateCommands() {
 		const setModeStrict = vscode.commands.registerCommand('extension.setModeStrict', (contextSelection: vscode.Uri, allSelections: vscode.Uri[]) => {
-			vscode.window.showInformationMessage('Hello World! 1');
 
 			if (allSelections.length > 1){
 				setLuauMode(allSelections, '--!strict');
