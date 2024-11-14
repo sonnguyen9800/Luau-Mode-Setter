@@ -24,10 +24,6 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.activateModeManually",
-        "title": "Activate \"Luau Mode Setter\" manually"
-      },
-      {
         "command": "extension.setModeStrict",
         "title": "Strict"
       },
