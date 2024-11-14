@@ -1,6 +1,6 @@
 {
-  "name": "luau-strict-setter",
-  "displayName": "luau-strict-setter",
+  "name": "luau-mode-setter",
+  "displayName": "luau-mode-setter",
   "description": "Quickly set strict mode for luau script",
   "publisher": "sonnguyen9800",
   "repository": {
