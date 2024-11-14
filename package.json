@@ -28,27 +28,36 @@
         "title": "Nocheck"
       }
     ],
+
+    "submenus": [
+      {
+        "id": "submenuId",
+        "label": "Test Submenus"
+      }
+    ],
     "menus": {
       "explorer/context": [
-          {
-            "command": "extension.setModeStrict",
-            "when": "resourceLangId == luau",
-            "group": "navigation",
-            "title": "Toggle Strict Mode"
-          },
-          {
-            "command": "extension.setModeNonstrict",
-            "when": "resourceLangId == luau",
-            "group": "navigation",
-            "title": "Toggle Strict Mode"
-          },
-          {
-            "command": "extension.setModeNocheck",
-            "when": "resourceLangId == luau",
-            "group": "navigation",
-            "title": "Toggle Strict Mode"
-          }
+        {
+          "when": "resourceLangId == luau",
+          "group": "navigation",
+          "title": "Toggle Strict Mode",
+          "submenu": "submenuId"
+        }
+      ],
+
+      "submenuId":[
+        {
+          "command": "extension.setModeStrict"
+        },
+        {
+          "command": "extension.setModeNonstrict"
+        },        
+        {
+          "command": "extension.setModeNocheck"
+        }
       ]
+
+
     }
   },
   "scripts": {
