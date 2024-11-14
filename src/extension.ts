@@ -5,6 +5,8 @@ var PACKAGE_NAME  =  "Luau Mode Setter";
 export function activate(context: vscode.ExtensionContext) {
 	// Function to activate/deactivate based on the presence of .luau files
 	vscode.window.showInformationMessage(PACKAGE_NAME + " Started!");
+    vscode.commands.executeCommand('setContext', 'luauModeSetterActivated', true);
+
 
 	activateCommands();
 
@@ -95,7 +97,8 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 		});
 
-		context.subscriptions.push(setModeStrict, setModeNonstrict, setModeNocheck);
+		context.subscriptions.push(setModeStrict, setModeNonstrict, setModeNocheck, activateExtensionManually);
+
 	}
 
 	
@@ -110,6 +113,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Dispose of the watcher when the extension deactivates
 	context.subscriptions.push(watcher);
+		
+	context.subscriptions.push({
+		dispose: () => {
+			vscode.commands.executeCommand('setContext', 'luauModeSetterActivated', false);
+		}
+	});
 }
 
 
@@ -121,5 +130,6 @@ export function deactivate(context?: vscode.ExtensionContext) {
 		context.subscriptions.length = 0;  // Clear all subscriptions
 	}
 	vscode.window.showInformationMessage(PACKAGE_NAME + " Deactivated");
+    vscode.commands.executeCommand('setContext', 'luauModeSetterActivated', false);
 
 }
