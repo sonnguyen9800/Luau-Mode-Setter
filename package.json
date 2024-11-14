@@ -1,30 +1,28 @@
 {
-  "name": "luau-strict-setter",
-  "displayName": "luau-strict-setter",
+  "name": "luau-mode-setter",
+  "displayName": "Luau Mode Setter",
   "description": "Quickly set strict mode for luau script",
   "publisher": "sonnguyen9800",
   "repository": {
     "type": "git",
     "url": "https://github.com/sonnguyen9800/Luau-Mode-Setter.git"
   },
-  "keywords": ["<Keyword 1>", "<Keyword 2>"],
-  "version": "0.0.1",
+  "keywords": ["roblox", "luau", "vscode", "extension", "gamedev"],
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.95.0"
   },
   "categories": [
     "Other"
   ],
+  "icon": "luau-icon.png",
+
   "activationEvents": [
     "workspaceContains:**/*.luau"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-      {
-        "command": "extension.activateModeManually",
-        "title": "Activate \"Luau Mode Setter\" manually"
-      },
       {
         "command": "extension.setModeStrict",
         "title": "Strict"
@@ -46,16 +44,9 @@
       }
     ],
     "menus": {
-      "commandPalette": [
-        {
-          "command": "extension.activateModeManually",
-          "group": "navigation",
-          "when": "editorLangId == 'luau'"
-        }
-      ],
       "explorer/context": [
         {
-          "when": "luauModeSetterActivated && (resourceLangId == luau || explorerResourceIsFolder)",
+          "when": "luauModeSetterActivated && (resourceLangId == lua || resourceLangId == luau || explorerResourceIsFolder)",
           "group": "navigation",
           "title": "Luau Mode Setter",
           "submenu": "submenuId"

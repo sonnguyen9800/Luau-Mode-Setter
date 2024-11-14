@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 
 var PACKAGE_NAME  =  "Luau Mode Setter";
+var PATTERN_BOTH = '**/*.{luau,lua}';
+var PATTERN_LUAU = '**/*.{luau}';
 
 export function activate(context: vscode.ExtensionContext) {
 	// Function to activate/deactivate based on the presence of .luau files
@@ -11,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 	activateCommands();
 
 	async function checkLuauFiles() {
-		const files = await vscode.workspace.findFiles('**/*.luau');
+		const files = await vscode.workspace.findFiles(PATTERN_LUAU);
 		if (files.length === 0) {
 			console.log('No .luau files found. Deactivating extension.');
 			deactivate(context);
@@ -38,10 +40,9 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
 	async function setLuauModeSingle(uri: vscode.Uri, mode: string) {
-
 		if (await isDirectory(uri)){
-            const files = await vscode.workspace.findFiles(
-                new vscode.RelativePattern(uri, '**/*.luau')
+			const files = await vscode.workspace.findFiles(
+                new vscode.RelativePattern(uri, PATTERN_BOTH)
             );
             setLuauMode(files, mode);
 			return;
