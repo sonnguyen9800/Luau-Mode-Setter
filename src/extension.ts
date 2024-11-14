@@ -97,7 +97,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 		});
 
-		context.subscriptions.push(setModeStrict, setModeNonstrict, setModeNocheck, activateExtensionManually);
+		context.subscriptions.push(setModeStrict, setModeNonstrict, setModeNocheck);
 
 	}
 
