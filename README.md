@@ -2,7 +2,7 @@
 
 ![alt text](luau-icon.png)
 
-The Luau Mode Setter extension for Visual Studio Code allows you to easily toggle different mode directives in `.luau` files used in **Roblox development**. You are recommended to read the [motivation section](#motivation)
+The Luau Mode Setter extension for Visual Studio Code allows you to easily toggle different mode directives in `.luau` files used in **Roblox development**. You are recommended to read the [motivation section](#motivation) first.
 
 ## Features and How To Use
 - The plugin auto activates when `.luau` file is found in the workspace. This will also deactivate if no all `.luau` files deleted.
@@ -15,6 +15,11 @@ The Luau Mode Setter extension for Visual Studio Code allows you to easily toggl
 
 #### Mode Setting for Whole Folder
 ![tut3](https://github.com/user-attachments/assets/dd6635da-202f-4868-bdd3-c9c0c13ba790)
+
+
+## Installing
+
+https://marketplace.visualstudio.com/items?itemName=sonnguyen9800.luau-mode-setter
 
 ## Motivation
 - In `.luau`, there are *Type inference modes*, three of them are "nocheck", "nonstrict", "strict". You can refer to them through this link: https://luau.org/typecheck
