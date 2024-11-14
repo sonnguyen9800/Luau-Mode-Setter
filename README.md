@@ -16,6 +16,7 @@ The Luau Mode Setter extension for Visual Studio Code allows you to easily toggl
 #### Mode Setting for Whole Folder
 ![tut3](https://github.com/user-attachments/assets/dd6635da-202f-4868-bdd3-c9c0c13ba790)
 
+You can also grab the package vsix file and install manually.
 
 ## Installing
 
