@@ -16,11 +16,11 @@ The Luau Mode Setter extension for Visual Studio Code allows you to easily toggl
 #### Mode Setting for Whole Folder
 ![tut3](https://github.com/user-attachments/assets/dd6635da-202f-4868-bdd3-c9c0c13ba790)
 
-You can also grab the package vsix file and install manually.
 
 ## Installing
 
 https://marketplace.visualstudio.com/items?itemName=sonnguyen9800.luau-mode-setter
+You can also grab the package vsix file and install manually.
 
 ## Motivation
 - In `.luau`, there are *Type inference modes*, three of them are "nocheck", "nonstrict", "strict". You can refer to them through this link: https://luau.org/typecheck
