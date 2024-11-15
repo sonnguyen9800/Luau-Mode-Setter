@@ -5,7 +5,7 @@
 The Luau Mode Setter extension for Visual Studio Code allows you to easily toggle different mode directives in `.luau` files used in **Roblox development**. You are recommended to read the [motivation section](#motivation) first.
 
 ## Features and How To Use
-- The plugin auto activates when `.luau` file is found in the workspace. This will also deactivate if no all `.luau` files deleted.
+- The plugin auto activates when `.luau` file is found in the workspace. This will also deactivate if all `.luau` files get deleted.
 
 ####  Mode Setting for Single File
 ![tut1](https://github.com/user-attachments/assets/8ed3bf94-ff3c-4b03-b774-a71f0a35bbd1)
